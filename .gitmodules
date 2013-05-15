@@ -1,0 +1,12 @@
+[submodule "muchmala-static"]
+	path = muchmala-static
+	url = git@github.com:borbit/muchmala-static.git
+[submodule "muchmala-io"]
+	path = muchmala-io
+	url = git@github.com:borbit/muchmala-io.git
+[submodule "muchmala-cmn"]
+	path = muchmala-cmn
+	url = git@github.com:borbit/muchmala-cmn.git
+[submodule "muchmala-cli"]
+	path = muchmala-cli
+	url = git@github.com:borbit/muchmala-cli.git
