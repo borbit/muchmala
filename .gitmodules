@@ -10,3 +10,6 @@
 [submodule "muchmala-cli"]
 	path = muchmala-cli
 	url = git@github.com:borbit/muchmala-cli.git
+[submodule "muchmala-api"]
+	path = muchmala-api
+	url = git@github.com:borbit/muchmala-api.git
