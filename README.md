@@ -3,6 +3,9 @@ Muchmala
 
 Massively Multiplayer Online Puzzle
 
-# Installation
+http://muchmala.com
 
-All the installation instructions shoud go here.
+Installation
+------------
+
+All the installation instructions should go here.
