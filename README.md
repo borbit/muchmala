@@ -28,4 +28,5 @@ I will be really greatefull for any contibution in:
 * Desing and usabilty improvements
 * Mobile and tablets support
 * Performance optimizations
+* Game design
 * Bug fixes
