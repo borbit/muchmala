@@ -30,3 +30,10 @@ I will be really greatefull for any contibution in:
 * Performance optimizations
 * Game design
 * Bug fixes
+
+License
+-------
+
+Muchmala may be freely distributed under the [MIT license](http://en.wikipedia.org/wiki/MIT_License#License_terms).
+
+Copyright (c) 2013 Serge Borbit &lt;serge.borbit@gmail.com&gt;
