@@ -5,8 +5,8 @@ Massively Multiplayer Online Puzzle
 
 http://muchmala.com
 
-Manual Installation
--------------------
+Manual Installation (OS X)
+----------------------------
 
 1. Install [Redis](http://redis.io/)  
 
@@ -40,9 +40,10 @@ Manual Installation
         
 6. Generate first puzzle:
 
-        muchmala-cli/bin/muchmala-cli create path/to/image.[png|jpg] -o muchmala-static/public
-        muchmala-cli/bin/muchmala-cli covers -o muchmala-static/public/covers
-        muchmala-cli/bin/muchmala-cli frame -o muchmala-static/public/frame
+        cd muchmala-cli/bin
+        ./muchmala-cli create path/to/image.[png|jpg] -o muchmala-static/public
+        ./muchmala-cli covers -o muchmala-static/public/covers
+        ./muchmala-cli frame -o muchmala-static/public/frame
 
 7. Open [http://localhost:8002](http://localhost:8002)
         
