@@ -50,9 +50,9 @@ Manual Installation (OS X)
 Contribution
 ------------
 
-I will be really greatefull for any contibution in:
+I will be really greateful for any contribution in:
 
-* Desing and usabilty improvements
+* Design and usability improvements
 * Mobile and tablets support
 * Performance optimizations
 * Game design
