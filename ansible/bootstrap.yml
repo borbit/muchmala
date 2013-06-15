@@ -1,0 +1,10 @@
+- hosts: all
+  connection: ssh
+  sudo: true
+
+  vars_files:
+    - "vars/common.yml"
+    - [ "secrets/${envname}.yml", "environments/${envname}.yml" ]
+
+  roles:
+    - bootstrap

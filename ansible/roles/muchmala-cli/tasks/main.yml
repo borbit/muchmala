@@ -1,0 +1,18 @@
+- name: clone 'muchmala-cli' to '$dir'
+  sudo: false
+  git:
+    repo=$repo
+    dest=$dir
+    version=$branch
+  only_if: '"$envname" != "vagrant"'
+
+- name: link 'muchmala-cmn'
+  sudo: false
+  file:
+    src="/usr/lib/node_modules/muchmala-cmn"
+    dest="${dir}/node_modules/muchmala-cmn"
+    state=link
+
+- name: npm install
+  sudo: false
+  npm: path=${dir}

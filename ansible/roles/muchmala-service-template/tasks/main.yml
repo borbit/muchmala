@@ -1,0 +1,35 @@
+- name: clone '$name' to '$dir'
+  sudo: false
+  git:
+    repo=$repo
+    dest=$dir
+    version=$branch
+  notify: restart $name
+  only_if: '"$envname" != "vagrant"'
+
+- name: link 'muchmala-cmn'
+  sudo: false
+  file:
+    src="/usr/lib/node_modules/muchmala-cmn"
+    dest="${dir}/node_modules/muchmala-cmn"
+    state=link
+  notify: restart $name
+
+- name: npm install
+  sudo: false
+  npm: path=${dir}
+  notify: restart $name
+
+- name: generate .env
+  sudo: false
+  template:
+    src=dotenv.j2
+    dest=${dir}/.env
+    mode=644
+  notify: restart $name
+
+- name: generate upstart script
+  template:
+    src=upstart.conf.j2
+    dest=/etc/init/$name.conf
+  notify: restart $name

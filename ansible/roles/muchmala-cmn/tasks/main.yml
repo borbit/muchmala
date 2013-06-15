@@ -1,0 +1,30 @@
+- name: install 'libcairo2-dev'
+  apt: pkg=libcairo2-dev state=present
+
+- name: clone 'muchmala-cmn' to '$dir'
+  sudo: false
+  git:
+    repo=$repo
+    dest=$dir
+    version=$branch
+  only_if: '"$envname" != "vagrant"'
+
+- name: npm install
+  sudo: false
+  npm: path=$dir
+
+- name: create /usr/lib/node_modules
+  file:
+    path="/usr/lib/node_modules"
+    state=directory
+    owner=root
+    group=root
+    mode=775
+
+- name: link muchmala-cmn
+  file:
+    src=$dir
+    dest="/usr/lib/node_modules/muchmala-cmn"
+    owner=root
+    group=root
+    state=link

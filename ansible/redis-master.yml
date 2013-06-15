@@ -1,0 +1,22 @@
+- hosts: redis-master
+  connection: ssh
+  gather_facts: false
+  sudo: true
+
+  vars_files:
+    - "vars/common.yml"
+    - [ "secrets/${envname}.yml", "environments/${envname}.yml" ]
+
+  roles:
+    - role: redis
+      redis:
+        service: redis-master
+        conffile: /etc/redis/redis-master.conf
+        initfile: /etc/init/redis-master.conf
+        options:
+          dir: /var/lib/redis-master
+          pidfile: /var/run/redis/redis-master.pid
+          logfile: /var/log/redis/redis-master.log
+          port: ${redis_master.port}
+          requirepass: ${redis_master.requirepass}
+          masterauth: ${redis_master.masterauth}

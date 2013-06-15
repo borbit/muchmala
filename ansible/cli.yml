@@ -1,0 +1,21 @@
+- hosts: cli
+  connection: ssh
+  gather_facts: false
+  sudo: true
+
+  vars_files:
+    - "vars/common.yml"
+    - [ "secrets/${envname}.yml", "environments/${envname}.yml" ]
+
+  roles:
+    - nodejs
+
+    - role: muchmala-cmn
+      repo: ${muchmala_cmn.repo}
+      dir: ${muchmala_cmn.dir}
+      branch: ${muchmala_cmn.branch}
+
+    - role: muchmala-cli
+      repo: ${muchmala_cli.repo}
+      dir: ${muchmala_cli.dir}
+      branch: ${muchmala_cli.branch}
