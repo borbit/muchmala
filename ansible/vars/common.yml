@@ -3,7 +3,7 @@ basedir: /opt/muchmala
 
 shared_env: &shared_env
   node_env: development
-  redis_url: redis://localhost/0
+  redis_url: redis://localhost/
 
 muchmala_cmn:
   repo: git@github.com:borbit/muchmala-cmn.git
