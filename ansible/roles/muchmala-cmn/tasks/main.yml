@@ -1,6 +1,9 @@
 - name: install 'libcairo2-dev'
   apt: pkg=libcairo2-dev state=present
 
+- name: install 'libjpeg8-dev'
+  apt: pkg=libjpeg8-dev state=present
+
 - name: clone 'muchmala-cmn' to '$dir'
   sudo: false
   git:
