@@ -50,6 +50,12 @@ Manual Installation (OS X)
 Vagrant Installation
 --------------------
 
+Add this to your `/etc/hosts`:
+
+    10.0.6.2 muchmala.dev api.muchmala.dev static.muchmala.dev io.muchmala.dev
+
+Then:
+
 ```bash
 # install custom fork of ansible
 [sudo] pip install https://github.com/laggyluke/ansible/archive/roles_combine_vars.zip
