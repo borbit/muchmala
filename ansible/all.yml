@@ -1,5 +1,6 @@
 - include: bootstrap.yml
 - include: redis-master.yml
+- include: loadbalancer.yml
 - include: static.yml
 - include: api.yml
 - include: io.yml

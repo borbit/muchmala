@@ -1,0 +1,16 @@
+- hosts: loadbalancer
+  connection: ssh
+  gather_facts: false
+  sudo: true
+
+  vars_files:
+    - "vars/common.yml"
+    - [ "secrets/${envname}.yml", "environments/${envname}.yml" ]
+
+  roles:
+    - muchmala-lb
+
+  roles:
+    - role: muchmala-lb
+      port: ${muchmala_lb.port}
+      autostart: ${muchmala_lb.autostart}

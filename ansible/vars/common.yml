@@ -10,6 +10,10 @@ muchmala_cmn:
   dir: /opt/muchmala/muchmala-cmn
   branch: master
 
+muchmala_lb:
+  autostart: false
+  port: 80
+
 muchmala_api:
   repo: git@github.com:borbit/muchmala-api.git
   dir: /opt/muchmala/muchmala-api
@@ -17,6 +21,8 @@ muchmala_api:
   autostart: false
   env:
     <<: *shared_env
+    hostname: api.muchmala.dev
+    host: 10.0.6.2
     port: 8003
 
 muchmala_io:
@@ -26,6 +32,8 @@ muchmala_io:
   autostart: false
   env:
     <<: *shared_env
+    hostname: io.muchmala.dev
+    host: 10.0.6.2
     port: 8001
 
 muchmala_static:
@@ -35,7 +43,12 @@ muchmala_static:
   autostart: false
   env:
     <<: *shared_env
+    hostname: static.muchmala.dev
+    host: 10.0.6.2
     port: 8002
+    io_url: "http://io.muchmala.dev"
+    api_url: "http://api.muchmala.dev"
+    static_url: "http://muchmala.dev"
 
 muchmala_cli:
   repo: git@github.com:borbit/muchmala-cli.git
