@@ -47,8 +47,6 @@ Manual Installation (OS X)
 6. Generate first puzzle:
     ```bash
     cd muchmala-cli
-    mkdir ../muchmala-static/public/covers
-    mkdir ../muchmala-static/public/frames
     ./bin/muchmala-cli create path/to/image.jpg -o ../muchmala-static/public
     ./bin/muchmala-cli covers -o ../muchmala-static/public/covers
     ./bin/muchmala-cli frame -o ../muchmala-static/public/frames
@@ -95,8 +93,6 @@ Vagrant Installation
 7. Generate first puzzle:
     ```bash
     cd muchmala-cli
-    mkdir ../muchmala-static/public/covers
-    mkdir ../muchmala-static/public/frames
     ./bin/muchmala-cli create path/to/image.jpg -o ../muchmala-static/public
     ./bin/muchmala-cli covers -o ../muchmala-static/public/covers
     ./bin/muchmala-cli frame -o ../muchmala-static/public/frames
