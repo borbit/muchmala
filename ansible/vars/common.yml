@@ -1,5 +1,6 @@
 hostname: muchmala.com
 basedir: /opt/muchmala
+project_user: muchmala
 
 shared_env: &shared_env
   node_env: development
@@ -22,7 +23,7 @@ muchmala_api:
   env:
     <<: *shared_env
     hostname: api.muchmala.dev
-    host: 10.0.6.2
+    host: 127.0.0.1
     port: 8003
 
 muchmala_io:
@@ -33,7 +34,7 @@ muchmala_io:
   env:
     <<: *shared_env
     hostname: io.muchmala.dev
-    host: 10.0.6.2
+    host: 127.0.0.1
     port: 8001
 
 muchmala_static:
@@ -44,11 +45,11 @@ muchmala_static:
   env:
     <<: *shared_env
     hostname: static.muchmala.dev
-    host: 10.0.6.2
+    host: 127.0.0.1
     port: 8002
     io_url: "http://io.muchmala.dev"
     api_url: "http://api.muchmala.dev"
-    static_url: "http://muchmala.dev"
+    static_url: "http://static.muchmala.dev"
 
 muchmala_cli:
   repo: git@github.com:borbit/muchmala-cli.git

@@ -12,6 +12,8 @@ http {
         ''      close;
     }
 
+    server_names_hash_bucket_size 128;
+
     # muchmala-static
     server {
         listen {{ port }} default_server;

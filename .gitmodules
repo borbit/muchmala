@@ -25,3 +25,6 @@
 [submodule "ansible/roles/enver"]
 	path = ansible/roles/enver
 	url = git@github.com:laggyluke/ansible-role-enver.git
+[submodule "ansible/roles/s3cmd"]
+	path = ansible/roles/s3cmd
+	url = git@github.com:laggyluke/ansible-role-s3cmd.git
