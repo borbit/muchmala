@@ -98,6 +98,8 @@ Vagrant Installation
     ./bin/muchmala-cli frame -o ../muchmala-static/public/frames
     ```
 
+8. Open [http://muchmala.dev](http://muchmala.dev)
+
 Contributors
 ------------
 
