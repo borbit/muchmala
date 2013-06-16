@@ -1,0 +1,21 @@
+[loadbalancer]
+10.0.6.2
+
+[static]
+10.0.6.2
+
+[api]
+10.0.6.2
+
+[io]
+10.0.6.2
+
+[cli]
+10.0.6.2
+
+[redis-master]
+10.0.6.2
+
+[all:vars]
+ansible_ssh_user = vagrant
+envname = vagrant

@@ -1,0 +1,19 @@
+- include: nginx.yml
+
+- name: generate config file
+  template:
+    src="nginx.conf.j2"
+    dest="/etc/nginx/muchmala-lb.conf"
+    owner=root
+    group=root
+    mode=664
+  notify: restart muchmala-lb
+
+- name: generate upstart script
+  template:
+    src="upstart.conf.j2"
+    dest="/etc/init/muchmala-lb.conf"
+    owner=root
+    group=root
+    mode=664
+  notify: restart muchmala-lb

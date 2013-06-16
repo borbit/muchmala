@@ -1,0 +1,25 @@
+- hosts: static
+  connection: ssh
+  gather_facts: false
+  sudo: true
+
+  vars_files:
+    - "vars/common.yml"
+    - [ "secrets/${envname}.yml", "environments/${envname}.yml" ]
+
+  roles:
+    - enver
+    - nodejs
+
+    - role: muchmala-cmn
+      repo: ${muchmala_cmn.repo}
+      dir: ${muchmala_cmn.dir}
+      branch: ${muchmala_cmn.branch}
+
+    - role: muchmala-service-template
+      name: muchmala-static
+      repo: ${muchmala_static.repo}
+      dir: ${muchmala_static.dir}
+      branch: ${muchmala_static.branch}
+      autostart: ${muchmala_static.autostart}
+      env: ${muchmala_static.env}

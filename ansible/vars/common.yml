@@ -1,0 +1,61 @@
+hostname: muchmala.com
+basedir: /opt/muchmala
+
+shared_env: &shared_env
+  node_env: development
+  redis_url: redis://localhost/0
+
+muchmala_cmn:
+  repo: git@github.com:borbit/muchmala-cmn.git
+  dir: /opt/muchmala/muchmala-cmn
+  branch: master
+
+muchmala_lb:
+  autostart: false
+  port: 80
+
+muchmala_api:
+  repo: git@github.com:borbit/muchmala-api.git
+  dir: /opt/muchmala/muchmala-api
+  branch: master
+  autostart: false
+  env:
+    <<: *shared_env
+    hostname: api.muchmala.dev
+    host: 10.0.6.2
+    port: 8003
+
+muchmala_io:
+  repo: git@github.com:borbit/muchmala-io.git
+  dir: /opt/muchmala/muchmala-io
+  branch: master
+  autostart: false
+  env:
+    <<: *shared_env
+    hostname: io.muchmala.dev
+    host: 10.0.6.2
+    port: 8001
+
+muchmala_static:
+  repo: git@github.com:borbit/muchmala-static.git
+  dir: /opt/muchmala/muchmala-static
+  branch: master
+  autostart: false
+  env:
+    <<: *shared_env
+    hostname: static.muchmala.dev
+    host: 10.0.6.2
+    port: 8002
+    io_url: "http://io.muchmala.dev"
+    api_url: "http://api.muchmala.dev"
+    static_url: "http://muchmala.dev"
+
+muchmala_cli:
+  repo: git@github.com:borbit/muchmala-cli.git
+  dir: /opt/muchmala/muchmala-cli
+  branch: master
+
+redis_master:
+  port: 6379
+  requirepass: ""
+  masterauth: ""

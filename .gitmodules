@@ -13,3 +13,15 @@
 [submodule "muchmala-api"]
 	path = muchmala-api
 	url = git@github.com:borbit/muchmala-api.git
+[submodule "ansible/roles/bootstrap"]
+	path = ansible/roles/bootstrap
+	url = git@github.com:laggyluke/ansible-role-bootstrap.git
+[submodule "ansible/roles/nodejs"]
+	path = ansible/roles/nodejs
+	url = git@github.com:laggyluke/ansible-role-nodejs.git
+[submodule "ansible/roles/redis"]
+	path = ansible/roles/redis
+	url = git@github.com:laggyluke/ansible-role-redis.git
+[submodule "ansible/roles/enver"]
+	path = ansible/roles/enver
+	url = git@github.com:laggyluke/ansible-role-enver.git

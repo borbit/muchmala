@@ -1,0 +1,25 @@
+- hosts: api
+  connection: ssh
+  gather_facts: false
+  sudo: true
+
+  vars_files:
+    - "vars/common.yml"
+    - [ "secrets/${envname}.yml", "environments/${envname}.yml" ]
+
+  roles:
+    - enver
+    - nodejs
+
+    - role: muchmala-cmn
+      repo: ${muchmala_cmn.repo}
+      dir: ${muchmala_cmn.dir}
+      branch: ${muchmala_cmn.branch}
+
+    - role: muchmala-service-template
+      name: muchmala-api
+      repo: ${muchmala_api.repo}
+      dir: ${muchmala_api.dir}
+      branch: ${muchmala_api.branch}
+      autostart: ${muchmala_api.autostart}
+      env: ${muchmala_api.env}

@@ -1,0 +1,59 @@
+user www-data;
+worker_processes 4;
+pid /run/nginx.pid;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    map $http_upgrade $connection_upgrade {
+        default upgrade;
+        ''      close;
+    }
+
+    # muchmala-static
+    server {
+        listen {{ port }} default_server;
+        server_name {{ muchmala_static.env.hostname }};
+
+        location / {
+            proxy_pass http://muchmala-static;
+        }
+    }
+
+    # muchmala-api
+    server {
+        listen {{ port }};
+        server_name {{ muchmala_api.env.hostname }};
+
+        location / {
+            proxy_pass http://muchmala-api;
+        }
+    }
+
+    # muchmala-io
+    server {
+        listen {{ port }};
+        server_name {{ muchmala_io.env.hostname }};
+
+        location / {
+            proxy_pass http://muchmala-io;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection $connection_upgrade;
+        }
+    }
+
+    upstream muchmala-api {
+        server {{ muchmala_api.env.host }}:{{ muchmala_api.env.port }};
+    }
+
+    upstream muchmala-io {
+        server {{ muchmala_io.env.host }}:{{ muchmala_io.env.port }};
+    }
+
+    upstream muchmala-static {
+        server {{ muchmala_static.env.host }}:{{ muchmala_static.env.port }};
+    }
+}

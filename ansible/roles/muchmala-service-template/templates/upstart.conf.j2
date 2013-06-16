@@ -1,0 +1,12 @@
+{% if autostart %}
+start on filesystem or runlevel [2345]
+stop on runlevel [!2345]
+{% endif %}
+
+respawn
+respawn limit 10 5
+
+setuid nobody
+setgid nogroup
+
+exec enver {{ dir }}/bin/{{ name }}
