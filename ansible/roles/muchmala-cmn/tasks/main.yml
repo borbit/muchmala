@@ -1,8 +1,10 @@
-- name: install 'libcairo2-dev'
-  apt: pkg=libcairo2-dev state=present
-
-- name: install 'libjpeg8-dev'
-  apt: pkg=libjpeg8-dev state=present
+- name: install packages for node-canvas
+  apt: pkg={{ item }} state=present
+  with_items:
+    - libcairo2-dev
+    - libjpeg8-dev
+    - libpango1.0-dev
+    - libgif-dev
 
 - name: clone 'muchmala-cmn' to '$dir'
   sudo: false
