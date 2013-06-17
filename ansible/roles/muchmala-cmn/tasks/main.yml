@@ -1,3 +1,7 @@
+- name: "create directory  {{ basedir }}"
+  file: path={{ basedir }} state=directory owner={{ project_user }}
+  only_if: '"{{ envname }}" != "vagrant"'
+
 - name: install packages for node-canvas
   apt: pkg={{ item }} state=present
   with_items:
@@ -16,7 +20,7 @@
 
 - name: npm install
   sudo: false
-  npm: path=$dir
+  npm: path={{ dir }}
 
 - name: create /usr/lib/node_modules
   file:
@@ -26,10 +30,10 @@
     group=root
     mode=775
 
-- name: link muchmala-cmn
+- name: link muchmala-cmn into /usr/lib/node_modules/muchmala-cmn
   file:
-    src=$dir
+    src="{{ dir }}"
     dest="/usr/lib/node_modules/muchmala-cmn"
+    state=link
     owner=root
     group=root
-    state=link

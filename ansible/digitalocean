@@ -1,0 +1,21 @@
+[loadbalancer]
+198.199.83.49
+
+[static]
+198.199.83.49
+
+[api]
+198.199.83.49
+
+[io]
+198.199.83.49
+
+[cli]
+198.199.83.49
+
+[redis-master]
+198.199.83.49
+
+[all:vars]
+ansible_ssh_user = muchmala
+envname = digitalocean

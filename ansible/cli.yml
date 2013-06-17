@@ -10,6 +10,10 @@
   roles:
     - nodejs
 
+    - role: s3cmd
+      access_key: ${s3.access_key}
+      secret_key: ${s3.secret_key}
+
     - role: muchmala-cmn
       repo: ${muchmala_cmn.repo}
       dir: ${muchmala_cmn.dir}
